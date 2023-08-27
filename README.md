@@ -56,16 +56,25 @@ If you try to set the server and get the following message `"ERROR:The domain na
 | Description   | Read   |   Response    | Write   |   Response    | Notes |
 |---|---|---|---|---|---|
 | APN Setting | `APN#` | `Currently in use APN:linksnet,,;` | `APN,{APNname}#` | `APN_OK, The terminal will restart after 30 seconds!` | If you set "UNLOCKAPN" this should automatically configure |
-| Low Battery Alarm | `BATALM#` | `BATALM: ON, 1` | ON: `BATALM,ON,{0-1}#` OFF: `BATALM,OFF#` | `OK` | Alert Options, 0:GPRS，1:SMS+GPRS |
 | Set Timezone | `GMT#` | `Currently Timezone(GMT):E,8,0` | `GMT,A,B,C#` | `GMT_OK, The terminal will restart after 30 seconds!` | A: E/W; E East time zone, W West time zone, B: 0~12; time zone, C: 0/15/30/45; Half time zone, `APASETGMTN#` Does not seem to work |
-| Tamper Alarm | `RMV#` | `RMV: OFF, 0` | ON: `RMV,ON,{0-1}#` OFF: `RMV,OFF#` | `OK` | Alert Options, 0:GPRS，1:SMS+GPRS，2:GPRS+SMS+CALL |
-| Vibration Alarm | `SENALM#` | `SENALM:OFF;` | ON: `SENALM,ON,{0-2}#` OFF: `SENALM,OFF#` | `OK` | Alert Options, 0:GPRS，1:SMS+GPRS，2:GPRS+SMS+CALL |
+| Set Position Update Interval | `HBT#` | `HBT:3,3;` | `HBT,5,5#` | `HBT_OK` | This is how ofter the tracker uploads data in minutes when NOT moving, set both values the same. |
+| Set Language | `LANG#` | `Currently Language:0` | `LANG,0#` | `LANG_OK` | Set 0 for English and 1 for Chinese |
 | Set Server (IP) | `SERVER#` | `Currently in use Server:1,WW9016.GPSOG.COM,9016,0;` | `SERVER,0,123.123.123.123,5023,0#` | `SERVER_OK` | Second option is 0 for IP and 1 for domain |
 | Set Server (Domain) | `SERVER#` | `Currently in use Server:1,WW9016.GPSOG.COM,9016,0;` | `SERVER,1,example.com,5023,0#` | `SERVER_OK` | Second option is 0 for IP and 1 for domain |
-| Add SOS / Notification Number | `SOS#` | `SOS number:,,;` | `SOS,A,Number1,Number2,Number3#` | `OK!SOS1:Number1 SOS2:Number2 SOS3:Number3` | This is the number(s) used if SMS setting is used in an Alarm |
-| Delete SOS / Notification Number | `SOS#` | `SOS number:,,;` | `SOS,D,Number1,Number2,Number3#` | `OK!SOS number is empty!` | Use SOS# first to get list of numbers to add to delete list |
 | Power Saving Mode | `SWMODE#` | `Swmode : 0, 0` | `SWMODE,A,B#` | `OK` | A Options, 0:Always On, 1:Power Saving, B Option: Internal in minutes for power saving |
-| Set Position Update Interval | `TIMER#` | `Timer:10,10;` | `TIMER,10#` | `Timer:10,10;` | This is how ofter the tracker uploads data |
+| Set Position Update Interval | `TIMER#` | `Timer:10,10;` | `TIMER,10#` | `Timer:10,10;` | This is how ofter the tracker uploads data in seconds when moving |
+
+
+## Commands - Alarms
+| Description   | Read   |   Response    | Write   |   Response    | Notes |
+|---|---|---|---|---|---|
+| Add Alarm Notification Number | `SOS#` | `SOS number:,,;` | `SOS,A,Number1,Number2,Number3#` | `OK!SOS1:Number1 SOS2:Number2 SOS3:Number3` | This is the number(s) used if SMS setting is used in an Alarm |
+| Delete Alarm Notification Number | `SOS#` | `SOS number:,,;` | `SOS,D,Number1,Number2,Number3#` | `OK!SOS number is empty!` | Use SOS# first to get list of numbers to add to delete list |
+| Low Battery Alarm | `BATALM#` | `BATALM: ON, 1` | ON: `BATALM,ON,{0-1}#` OFF: `BATALM,OFF#` | `OK` | Alert Options, 0:GPRS，1:SMS+GPRS |
+| Moving Alarm | `MOVING#` | `Moving Switch:OFF;Radius:100m;Alarm Type:0;` | `MOVING,ON,{meters},{0-2}#` | `MOVING_OK` | Set distance in meters before alerting, Alert Options, 0:GPRS，1:SMS+GPRS，2:GPRS+SMS+CALL |
+| Tamper Alarm | `RMV#` | `RMV: OFF, 0` | ON: `RMV,ON,{0-1}#` OFF: `RMV,OFF#` | `OK` | Alert Options, 0:GPRS，1:SMS+GPRS，2:GPRS+SMS+CALL |
+| Vibration Alarm | `SENALM#` | `SENALM:OFF;` | ON: `SENALM,ON,{0-2}#` OFF: `SENALM,OFF#` | `OK` | Alert Options, 0:GPRS，1:SMS+GPRS，2:GPRS+SMS+CALL |
+| Speeding Alarm | `SPEED#` | `SPEED: OFF, 10, 60, 0` | ON: `SPEED,ON,{time},{speed},{0-2}#` OFF: `SPEED,OFF#`  | `SPEEDALM_OK` | Time the Speed is traveled for before triggering. Alert Options, 0:GPRS，1:SMS+GPRS，2:GPRS+SMS+CALL |
 
 ## Commands - Information
 | Description   | Command   |   Response    |   Notes   |
