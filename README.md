@@ -116,7 +116,7 @@ Traccar Support (Search S20, uses gt06/5023 protocol): https://www.traccar.org/d
 
 Unlock Method for 2G model: https://gist.github.com/zayigo/d4ec6f09873df93b22a1fa394838d1ca
 
-Portgugese Deal site with LOADS of information about the device: https://www.pepper.pl/dyskusji/tracker-gps-wanway-tech-s20-przydatne-informacje-619404
+Polish Deal site with LOADS of information about the device: https://www.pepper.pl/dyskusji/tracker-gps-wanway-tech-s20-przydatne-informacje-619404
 
 Russian Wholesaler with documentation on Neoway N58 Chip: https://www.wless.ru/technology/?action=details&id=790&pf=tech&pf_id=1&prod=35&tech=2&type=167
 
