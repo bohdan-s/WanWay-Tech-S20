@@ -38,6 +38,7 @@ See [S20-4G-SMS-COMMANDS](SMS-Commands/S20-4G-SMS-COMMANDS-2022.7.15.pdf) and [S
     * if you prefer to use a domain name: `SERVER,1,example.com,5023,0#`
 * Set APN (if required) `APN,apn.net#`
 * Set the Timezone `GMT,e,10,0#`
+* (If you are getting "carehere" links when sending URL# command, set it to google maps with `LANG,0#`)
 
 ## Commands - Device
 | Description   |   Command   |   Response    |
